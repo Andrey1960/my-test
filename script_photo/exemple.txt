@@ -1,0 +1,109 @@
+
+convert -define jpeg:size=650x393 2.png \
+-thumbnail 325x196  thumbnail.png
+
+convert 011.JPG \
+          \( +clone -resize x1500  -write  parrots_lrg.jpg +delete \) \
+          \( +clone -resize x750   -write  parrots_big.jpg +delete \) \
+          \( +clone -resize x375   -write  parrots_med.jpg +delete \) \
+                    -resize x187          parrots_sml.jpg
+
+convert image.jpg \
+\( +clone -resize 240x240  -write  parrots_lrg.jpg +delete \) \( +clone -resize 120x120 -write  parrots_big.jpg +delete \) -resize 60x60 parrots_sml.jpg
+        
+===============================================================================
+
+
+convert *.jpg new%03d.png
+
+===============================================================================
+
+ composite -geometry +1080+800 8.png 107.jpg  wmark_symbol.jpg
+
+composite -geometry +180+125 4.png 005.png  charlik.png
+
+composite -geometry +1380+100 10.png elma.jpg  isyanova.jpg
+===============================================================================
+
+
+./tshirt -r "500x391+1080+800" -R -3 -o 5,0 555.jpg 107.jpg erm.jpg
+
+./tshirt -r "408x500+400+40" -R -3 -o 5,0 5.png 21.jpg elma.jpg
+
+./tshirt -r "650x393+1250+1250" -f crop -g center 2.png 21.jpg elmira.jpg
+
+=============================================================================
+./tshirt -r "848x455+100+105" -R -3 -o 5,0 17.png 1.jpg ser.jpg
+
+./tshirt -r "x488+100+1150" -R -3 -o 5,0 4.png 3.jpg guban.jpg
+
+
+
+================================================================================
+
+
+
+
+
+
+==================================================================================
+        
+./vintage3  -T round dscn1465.jpg background.jpg outfile.jpg 
+
+./vintage3  -T torn DSCN1463.JPG 07_background.jpg outfile1.jpg
+
+=================================================================================
+
+
+
+
+
+
+=================================================================================
+
+
+
+
+
+
+##################################################################
+
+##################################################################
+
+####################################################################
+
+
+
+
+
+########################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  convert -size 800x120 xc:black -font Morpheus -pointsize 100 \
+          -tile tile_disks.jpg   -annotate +20+80 'Марченков!' \
+          -trim +repage  -bordercolor black  -border 10   funfont_groovy.jpg
+
+ convert -size 480x80   gradient:yellow-green \
+          -font DroidSerifI -pointsize 70 -tile gradient:blue-red \
+          -annotate +10+65 'Андрей Марченков'    funfont_gradients.jpg
+
+convert -font Morpheus -pointsize 72  label:'Welcome!' -border 10 \
+          -tile tile_aqua.jpg   -draw "color 0,0 reset"  \
+          -tile tile_water.jpg -gravity center -annotate +0+0 'Get Wet!' \
+          autosize_wet.jpg
+
+
